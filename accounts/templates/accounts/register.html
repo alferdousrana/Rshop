@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Register {% endblock %}
+
+
+{% block content %}
+    <style>
+        .my-width {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+
+        .text-color-pink {
+            color: #FF004F;
+        }
+
+        .button-btn {
+            background-color: #FF004F;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button-btn:hover {
+            background-color: #e60046;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #FF004F;
+        }
+
+        .position-relative {
+            position: relative;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-main-wrapper ">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 p-0">
+                    <div class="form-sidebar">
+                        <div class="logo-section">
+                            <img src="{% static 'images/logo3.png' %}" alt="img">
+                        </div>
+                        <div class="form-image d-xl-block d-lg-block d-none">
+                            <img src="{% static 'images/form-img.png' %}" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 p-0 mt-5">
+                    <div class="login-main">
+                        <form method="POST" action="{% url 'register' %}">
+                            {% csrf_token %}
+                            <h4>Register Now</h4>
+                            <p class="mb-3">Register by entering the information below</p>
+
+                            <label for="first_name">First Name*</label>
+                            <input type="text" name="first_name" class="my-width" required>
+
+                            <label for="last_name">Last Name*</label>
+                            <input type="text" name="last_name" class="my-width" required>
+
+                            <label for="email">Email*</label>
+                            <input type="email" name="email" class="my-width" required>
+
+                            <label for="password">Password*</label>
+                            <div class="position-relative">
+                                <input type="password" id="password" name="password1" class="my-width" required>
+                                <span class="toggle-password" onclick="togglePassword('password', this)">👁</span>
+                            </div>
+
+                            <label for="confirm_password">Confirm Password*</label>
+                            <div class="position-relative">
+                                <input type="password" id="confirm_password" name="password2" class="my-width"
+                                    required>
+                                <span class="toggle-password"
+                                    onclick="togglePassword('confirm_password', this)">👁</span>
+                            </div>
+
+                            <div class="mt-2">
+                                <input type="checkbox" id="accept" class="me-2" required>
+                                <label for="accept">Yes, I agree to the <a href="#" class="text-color-pink">Terms &
+                                        Conditions</a>.</label>
+                            </div>
+
+                            <button type="submit" class="button-btn mt-4 text-capitalize">Register
+                                <span><i class="fas fa-angle-double-right"></i></span>
+                            </button>
+
+                            <p class="mt-2">Already have an account? <a href="{% url 'login' %}"
+                                    class="text-color-pink">Login Now</a></p>
+                        </form>
+                        <div class="mb-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script>
+        function togglePassword(id, el) {
+            const input = document.getElementById(id);
+            if (input.type === "password") {
+                input.type = "text";
+                el.textContent = "🙈";
+            } else {
+                input.type = "password";
+                el.textContent = "👁";
+            }
+        }
+    </script>
+
+{% endblock %}

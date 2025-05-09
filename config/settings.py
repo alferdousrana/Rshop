@@ -11,9 +11,17 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import environ
+
+env = environ.Env(
+    DEBUG=(bool, False),
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))  # Load environment variables from .env file
 
 
 # Quick-start development settings - unsuitable for production
@@ -56,10 +64,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [
+            BASE_DIR / 'templates',
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +134,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]  # Add this line
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]  
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
@@ -128,3 +144,19 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "alferdous13@gmail.com"
+EMAIL_HOST_PASSWORD = "xkatskwbzkhdcgpu"
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+AUTHENTICATION_BACKENDS = [
+    "accounts.authentication.EmailBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
