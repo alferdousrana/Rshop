@@ -42,54 +42,43 @@
     <section class="pessonal-detail section-padding">
         <div class="container">
             <div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="headline">
-						<h2>Personal details</h2>
-					</div>
-                
-                    <div class="personal-form">
-                        <div class="userleft">
-                            <form>
-                                Username
-                                <br>
-                                <input type="text" placeholder="Anderson">
-                                <br> Firstname
-                                <br>
-                                <input type="text" placeholder="Cory">
-                                <br> Email
-                                <br>
-                                <input type="email" placeholder="Mail@YourDomain.Com">
-                                <br> Address
-                                <br>
-                                <input type="text" placeholder="Street And House Number">
-                                <br> State/Country
-                                <br>
-                                <input type="text" placeholder="Your Country">
-                            </form>
-                        </div>
-                        <div class="userright">
-                            <h5>Username cannot be changed</h5>
-                            <form>
-                                Lastname
-                                <br>
-                                <input type="text" placeholder="Anderson">
-                                <br> Phone
-                                <br>
-                                <input type="text" placeholder="+91 123 456 78">
-                                <br> ZIP Code
-                                <br>
-                                <input type="text" placeholder="Your City Name">
-                                <br> State/Country
-                                <br>
-                                <input type="text" placeholder="0123 Australia">
-                                <br>
-                            </form>
-                        </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="headline">
+                        <h2>Personal details</h2>
                     </div>
+    
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="personal-form">
+                            <div class="userleft">
+                                Firstname <br>
+                                {{ form.first_name }} <br>
+                                Email <br>
+                                {{ form.email }} <br>
+                                Address <br>
+                                {{ form.address }} <br>
+                                Country <br>
+                                {{ form.country }} <br>
+                            </div>
+    
+                            <div class="userright">
+                                Lastname <br>
+                                {{ form.last_name }} <br>
+                                Phone <br>
+                                {{ form.phone }} <br>
+                                City <br>
+                                {{ form.city }} <br>
+                                ZIP Code <br>
+                                {{ form.post_code }} <br>
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+        </section>
     <!-- PERSONAL-DETAIL-AREA:END   -->
 	
     <!-- CHANGE-PASSWORD-AREA   -->
@@ -102,19 +91,18 @@
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="change-form">
-                        <form>
-                            Old Password
+                        <form method="POST">
+                            {% csrf_token %}
+                            Old Password <br>
+                            <input type="password" name="old_password"> <br>
+                            New Password <br>
+                            <input type="password" name="password1"> <br>
+                            Repeat New Password <br>
+                            <input type="password" name="password2"> <br>
                             <br>
-                            <input type="text">
-                            <br> New Password
-                            <br>
-                            <input type="text">
-                            <br> Repeat New Password
-                            <br>
-                            <input type="text">
-                            <br>
+                            <button type="submit" class="btn btn-default">Save changes</button>
                         </form>
-                        <button type="button" class="btn btn-default">Save changes</button>
+   
                     </div>
                 </div>
             </div>

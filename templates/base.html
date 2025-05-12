@@ -30,7 +30,7 @@
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png">
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
 
 
 </head>
@@ -45,63 +45,35 @@
                     <div class="col-md-6 col-sm-5">
                         <div class="user-menu">
                             <ul class="list-unstyled list-inline">
-                                <li class="dropdown dropdown-small">
-                                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle"
-                                        href="#"><span class="value">English </span><i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">English</a>
-                                        </li>
-                                        <li><a href="#">French</a>
-                                        </li>
-                                        <li><a href="#">German</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown dropdown-small">
-                                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle"
-                                        href="#"><span class="value">USD </span><i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">USD</a>
-                                        </li>
-                                        <li><a href="#">INR</a>
-                                        </li>
-                                        <li><a href="#">GBP</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>Welcome to Ecommerce</li>
+                                
+                                <li>Welcome to Rshop</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-7">
                         <div class="header-right">
                             <ul>
-                                <li class="dropdown dropdown-small">
-                                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle"
-                                        href="#"><img class="account" src="images/account.png" alt="#"><span
-                                            class="value">My Account </span><i class="fa fa-angle-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu account-menu">
-                                        <li><a href="profile.html">My account</a>
-                                        </li>
-                                        <li><a href="wishlist.html">Wishlist</a>
-                                        </li>
-                                        <li><a href="product-list.html">Shopping</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="wishlist.html"><i class="fa fa-heart-o"></i> Wishlist</a>
-                                </li>
-                                <li>
-                                    <a href="checkout.html"><img src="images/check.png" alt="#"> Checkout</a>
-                                </li>
+                                {% if user.is_authenticated %}
+                                <li><a href="/accounts/profile/"><img src="{% static 'images/account.png' %}" alt=""> My Account</a></li>
+                                <li><a href="/wishlist/"><i class="fa fa-heart-o"></i> Wishlist</a></li>
+                                <li><a href="/checkout/"><img src="{% static 'images/check.png' %}" alt="#"> Checkout</a></li>
                                 <li class="last-child">
-                                    <a class="logg" href="#"><img class="login" src="images/log.png" alt="#"> Login</a>
+                                    <a class="logg" href="/accounts/logout/"><img class="login" src="{% static 'images/log.png' %}" alt="#">
+                                        Logout</a>
                                 </li>
+                                {% else %}
+                                <li><a href="/accounts/login/"><img src="{% static 'images/account.png' %}" alt=""> My Account</a></li>
+                                <li><a href="/accounts/login/"><i class="fa fa-heart-o"></i> Wishlist</a></li>
+                                <li><a href="/accounts/login/"><img src="{% static 'images/check.png' %}" alt="#"> Checkout</a></li>
+                                <li class="last-child">
+                                    <a class="logg" href="/accounts/login/"><img class="login" src="{% static 'images/log.png' %}" alt="#">
+                                        Login</a>
+                                </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -113,7 +85,7 @@
                 <div class="row">
                     <div class="col-sm-4 col-md-4 col-xs-12">
                         <div class="logo">
-                            <a href="index.html"><img src="images/logo.png" alt="">
+                            <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="">
                             </a>
                         </div>
                     </div>
@@ -121,7 +93,6 @@
                         <div class="search-area">
                             <form>
                                 <div class="control-group">
-
                                     <ul class="categories-filter animate-dropdown">
                                         <li class="dropdown">
 
@@ -207,11 +178,7 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <nav class="main-menu">
                             <ul id="navigation">
-                                <li class="active"><a href="index.html">Home <i class="fa fa-caret-down"></i></a>
-                                    <ul class="drop_nav">
-                                        <li><a href="homepage_02.html">Home two</a></li>
-                                        <li><a href="homepage_03.html">Home three</a></li>
-                                    </ul>
+                                <li class="active"><a href="{% url 'home' %}">Home </a>
                                 </li>
                                 <li><a href="#">Pages <i class="fa fa-caret-down"></i></a>
                                     <ul class="drop_nav">
@@ -477,30 +444,38 @@
 </footer>
 <!-- Entire FOOTER:END -->
 
-<!-- jQuery latest -->
-<script type="text/javascript" src="js/jQuery.2.1.4.js"></script>
 
-
-<!-- js Modernizr -->
-<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-
-<!-- Revolution slider -->
-<script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
-<script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
 
 
 <!-- Bootsrap js -->
 <!-- Bootstrap js -->
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/GoogleMap-dark.js' %}"></script>
 
-<!-- Plugins js -->
-<script src="{% static 'js/plugins.js' %}"></script>
+<!-- jQuery latest -->
+<script type="text/javascript" src="{% static 'js/jQuery.2.1.4.js' %}"></script>
+
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/jquery.flexslide-min.js' %}"></script>
+<script src="{% static 'js/jquery.glasscase.minf195.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.enablelog.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.revolution.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
+
+<!-- Custom js -->
+<script src="{% static 'js/main.js' %}"></script>
+<!-- js Modernizr -->
+<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
 <!-- Owl js -->
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
 
-<!-- Custom js -->
-<script src="{% static 'js/main.js' %}"></script>
+<!-- Plugins js -->
+<script src="{% static 'js/plugins.js' %}"></script>
+
+
+
 
 </body>
 

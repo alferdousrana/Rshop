@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Product List{% endblock %}
+{% block content %}
+
+
+    <!-- PAGE-TITLE-AREA -->
+    <section class="page-title-area">
+        <div class="page-title-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-title">
+                            <h3>Product list</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PAGE-TITLE-AREA:END -->
+	
+    <!-- BREADCRUMBS  -->
+    <div class="title-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="bred-title">
+                        <h3>Product list</h3>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a>
+                        </li>
+                        <li><a href="about-us.html">Product list</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BREADCRUMBS:END  -->
+	
+    <!-- PRODUCT-LIST-AREA  -->
+    <div class="product-list-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="brands">
+                        <h3>Categories <i class="fa fa-bars"></i></h3>
+                        <ul>
+                            {% for category in categories %}
+                            <li>
+                                <input type="checkbox" name="category" value="{{ category.id }}">
+                                {{ category.name }}
+                                <span>({{ category.product_set.count }})</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+                    <div class="filter">
+                        <h3>Filter by price</h3>
+                        <div class="filter_inner">
+							<div id="slider-range"></div>
+							<div class="f_price">
+								<div class="filter_a">
+									<a href="">Filter</a>
+								</div>
+								<div class="cat_filter_box">
+									<p>
+									  <input type="text" id="amount" readonly style="border:0; color:#000; font-weight:bold;">
+									</p>
+								</div>
+							</div>
+						</div>
+                    </div>
+                    <div class="best-sell">
+                        <h3>Best seller</h3>
+						
+						<div id="plCarousel" class="carousel slide" data-ride="carousel">
+
+						  <!-- Wrapper for slides -->
+						  <div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<div class="single-wid-product sel-pd">
+									<a href="#"><img src="images/sell1.png" alt="" class="product-thumb">
+									</a>
+									<h2><a href="single-product.html">Canon mini model</a></h2>
+									<div class="product-wid-rating">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<div class="product-wid-price">
+										<ins>$250.00</ins>
+									</div>
+								</div>
+								<div class="single-wid-product sel-pd">
+									<a href="#"><img src="images/sell2.png" alt="" class="product-thumb">
+									</a>
+									<h2><a href="single-product.html">Nexus</a></h2>
+									<div class="product-wid-rating">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<div class="product-wid-price">
+										<ins>$250.00</ins>
+									</div>
+								</div>
+								<div class="single-wid-product sel-pd">
+									<a href="#"><img src="images/sell3.png" alt="" class="product-thumb">
+									</a>
+									<h2><a href="single-product.html">Pink women bag</a></h2>
+									<div class="product-wid-rating">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<div class="product-wid-price">
+										<ins>$250.00</ins>
+									</div>
+								</div>
+								<div class="single-wid-product sel-pd">
+									<a href="#"><img src="images/sell4.png" alt="" class="product-thumb">
+									</a>
+									<h2><a href="single-product.html">Trendy Watch</a></h2>
+									<div class="product-wid-rating">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<div class="product-wid-price">
+										<ins>$250.00</ins>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="single-wid-product sel-pd">
+									<a href="#"><img src="images/sell1.png" alt="" class="product-thumb">
+									</a>
+									<h2><a href="single-product.html">Canon mini model</a></h2>
+									<div class="product-wid-rating">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<div class="product-wid-price">
+										<ins>$250.00</ins>
+									</div>
+								</div>
+								<div class="single-wid-product sel-pd">
+									<a href="#"><img src="images/sell2.png" alt="" class="product-thumb">
+									</a>
+									<h2><a href="single-product.html">Nexus</a></h2>
+									<div class="product-wid-rating">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<div class="product-wid-price">
+										<ins>$250.00</ins>
+									</div>
+								</div>
+								<div class="single-wid-product sel-pd">
+									<a href="#"><img src="images/sell3.png" alt="" class="product-thumb">
+									</a>
+									<h2><a href="single-product.html">Pink women bag</a></h2>
+									<div class="product-wid-rating">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<div class="product-wid-price">
+										<ins>$250.00</ins>
+									</div>
+								</div>
+								<div class="single-wid-product sel-pd">
+									<a href="#"><img src="images/sell4.png" alt="" class="product-thumb">
+									</a>
+									<h2><a href="single-product.html">Trendy Watch</a></h2>
+									<div class="product-wid-rating">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<div class="product-wid-price">
+										<ins>$250.00</ins>
+									</div>
+								</div>
+							</div>
+
+
+						  </div>
+
+						  <!-- Left and right controls -->
+						  <a class="left carousel-control" href="#plCarousel" role="button" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						  </a>
+						  <a class="right carousel-control" href="#plCarousel" role="button" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						  </a>
+						</div>
+						
+                    </div>
+                </div>
+                {% for product in products %}
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-single">
+                        <a href="{% url 'product_detail' product.pk %}">
+                            {% if product.images.first %}
+                            <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                            <img src="{% static 'images/default.png' %}" alt="No image">
+                            {% endif %}
+                        </a>
+                        {% if product.created_at|timesince < "7 days" %} <div class="tag new"><span>new</span>
+                    </div>
+                    {% endif %}
+                    <div class="hot-wid-rating">
+                        <h4><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h4>
+                        {% for i in "12345"|slice:":product.reviews.aggregate(Avg('rating')).rating|default:0"|floatformat:0 %}
+                        <i class="fa fa-star"></i>
+                        {% endfor %}
+                        <div class="product-wid-price">
+                            <ins>Tk {{ product.price }}</ins>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- PRODUCT-LIST:END -->
+	
+  
+	
+	<!-- Range js -->
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script>
+	  $(function() {
+		$( "#slider-range" ).slider({
+		  range: true,
+		  min: 150,
+		  max: 1400,
+		  values: [ 520, 1100 ],
+		  slide: function( event, ui ) {
+			$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+		  }
+		});
+		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+		  " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+	  });
+	</script>
+	
+
+{% endblock %}

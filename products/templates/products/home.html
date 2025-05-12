@@ -1,0 +1,908 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load static %}
+	
+    <!-- MAIN-SLIDER-AREA -->
+    <div class="main_slider">
+        <div class="tp-banner-container">
+            <div class="tp-banner">
+                <ul>
+                    <li>
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'images/slider1.gif' %}" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    </li>
+                    <li>
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'images/slider2.gif' %}" style='background-color:#b2c4cc' alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    </li>
+                    <li>
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'images/slider3.gif' %}" alt="videobg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    </li>
+                </ul>
+                <div class="tp-bannertimer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- MAIN-SLIDER-AREA END -->
+	
+    <!-- PROMO-AREA -->
+    <section class="promo_area section_padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="promo_catgories">
+                        <div class="promo_big float_left">
+                            <div class="promo_img">
+                                <img src="{% static 'images/promo_left.png' %}" alt="#">
+                                <div class="img_text">
+                                    <h3>Top fashion for men</h3>
+                                    <P>Summer collection 2015</P>
+                                </div>
+                                <div class="promo_hover"></div>
+                            </div>
+                        </div>
+                        <div class="promo_middle float_left">
+                            <div class="promo_top">
+                                <div class="top_img">
+                                    <img src="{% static 'images/promo_middle_top.png' %}" alt="#">
+                                    <div class="promo_up_text">
+                                        <h3>25% Off<br/>Women bag</h3>
+                                        <P>Instore and online</P>
+                                    </div>
+                                    <div class="promo_hover"></div>
+                                </div>
+                            </div>
+                            <div class="promo_bottom">
+                                <div class="bottom_img">
+                                    <img src="{% static 'images/promo_middle_bottom.png' %}" alt="#">
+                                    <div class="promo_down_text">
+                                        <h3>15% Off<br/>Running shoes</h3>
+                                        <P>For men and women</P>
+                                    </div>
+                                    <div class="promo_hover"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo_big float_right">
+                            <div class="promo_img">
+                                <img src="{% static 'images/promo_right.png' %}" alt="#">
+                                <div class="img_text">
+                                    <h3>2015 trends for girls</h3>
+                                    <P>Collection and online</P>
+                                </div>
+                                <div class="promo_hover"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PROMO-AREA END -->
+	
+    <!-- MEN-CLOTHING-AREA -->
+    <section class="men_clothing_area section_padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="men_clothing">
+                        <div class="men_clothing_sidebar float_left">
+                            <h3>Men Clothing</h3>
+                            <ul>
+                                <li><a href="#">T-Shirts</a>
+                                </li>
+                                <li><a href="#">Stripped Shirts</a>
+                                </li>
+                                <li><a href="#">Down Jackets</a>
+                                </li>
+                                <li><a href="#">Suits</a>
+                                </li>
+                                <li><a href="#">Hodies</a>
+                                </li>
+                                <li><a href="#">Shorts</a>
+                                </li>
+                                <li><a href="#">Jeans</a>
+                                </li>
+                                <li><a href="#">Swimwear</a>
+                                </li>
+                                <li><a href="#">Belts</a>
+                                </li>
+                                <li><a href="#">Sunglasses</a>
+                                </li>
+                                <li><a href="#">Baseball Caps</a>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default">SHOP NOW</button>
+                        </div>
+                        <div class="men_clothing_middle float_left">
+                            <div id="men-carousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="images/men_slider.png" alt="#">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="images/men_slider.png" alt="">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <a class="left slider-left-btn" href="#men-carousel" role="button" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                                <a class="right slider-right-btn" href="#men-carousel" role="button" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="carousel_title">
+                                <h4>LATEST COLLECTION IN MEN FASHION 2015</h4>
+                            </div>
+                        </div>
+                        <div class="men_clothing_right float_left">
+                            <div class="product_top">
+                                <div class="single_left cc-h3 cc-h3-1">
+                                    <a href="#"><img src="images/red_shirt.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">TREND RED T-SHIRT</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$230.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_right cc-h3 cc-h3-2">
+                                    <a href="#"><img src="images/pest_shirt.png" alt="">
+                                    </a>
+                                    <div class="tag new">
+                                        <span>new</span>
+                                    </div>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">LATEST SHIRT</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$200.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_bottom">
+                                <div class="single_left cc-h3 cc-h3-3">
+                                    <a href="#"><img src="images/blue_shirt.png" alt="">
+                                    </a>
+                                    <div class="tagg new">
+                                        <span>new</span>
+                                    </div>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">CLOTHY T-SHIRT</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$180.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_right cc-h3 cc-h3-4">
+                                    <a href="#"><img src="images/print_shirt.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">DEZINE T-SHIRT</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$220.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MEN-CLOTHING-AREA:END -->
+	
+    <!-- WOMEN-CLOTHING-AREA -->
+    <section class="women_clothing section_padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="women_clothing">
+                        <div class="women_clothing_sidebar float_left">
+                            <h3>Women Clothing</h3>
+                            <ul>
+                                <li><a href="#">Summer Dresses</a>
+                                </li>
+                                <li><a href="#">Casual Dresses</a>
+                                </li>
+                                <li><a href="#">Blouses</a>
+                                </li>
+                                <li><a href="#">Skirts</a>
+                                </li>
+                                <li><a href="#">Jumpsuits</a>
+                                </li>
+                                <li><a href="#">T-Shirts</a>
+                                </li>
+                                <li><a href="#">Jackets</a>
+                                </li>
+                                <li><a href="#">Sunglasses</a>
+                                </li>
+
+                            </ul>
+                            <button type="button" class="btn btn-default">SHOP NOW</button>
+                        </div>
+
+
+                        <div class="women_clothing_middle float_left">
+                            <div id="women-carousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="images/women_slider.png" alt="#">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="images/women_slider.png" alt="#">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <a class="left slider-left-btn" href="#women-carousel" role="button" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                                <a class="right slider-right-btn" href="#women-carousel" role="button" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="carousel_title wo_car">
+                                <h4>LATEST SUMMER COLLECTION IN WOMEN</h4>
+                            </div>
+                        </div>
+                        <div class="women_clothing_right float_left">
+                            <div class="product_top">
+                                <div class="single_left cc-h3 cc-h3-1">
+                                    <a href="#"><img src="images/women_skirt_1.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">FASHION FOR GIRLS</a>
+                                        </h4>
+
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$180.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_right cc-h3 cc-h3-2">
+                                    <a href="#"><img src="images/women_skirt_2.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">BRAND CLOTHES</a>
+                                        </h4>
+
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$200.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_bottom">
+                                <div class="single_left cc-h3 cc-h3-3">
+                                    <a href="#"><img src="images/women_skirt_3.png" alt="">
+                                    </a>
+                                    <div class="tag percent">
+                                        <span>15%</span>
+                                    </div>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">TRENDY WEAR</a>
+                                        </h4>
+
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$150.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="single_right cc-h3 cc-h3-4">
+                                    <a href="#"><img src="images/women_skirt_4.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+
+                                        <h4><a href="single-product.html">FULL HAND WEAR</a>
+                                        </h4>
+
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$280.00</ins>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WOMEN-CLOTHING-AREA END -->
+	
+    <!-- OUR-CLIENT-AREA -->
+    <div id="our_clients" class="section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div id="clients_bg">
+                        <div class="clients_overlay">
+                            <div class="client-list">
+                                <div class="single-client">
+                                    <img src="images/partner.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner2.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner3.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner4.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner5.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner2.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner3.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner4.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner5.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner2.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner3.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner4.png" alt="">
+                                </div>
+                                <div class="single-client">
+                                    <img src="images/partner5.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- OUR-CLIENT-AREA END -->
+	
+    <!-- ELECTRONICS-AREA -->
+    <section class="electronics_area section_padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="electronics">
+                        <div class="electronics_sidebar float_left">
+                            <h3>ELECTRONICS</h3>
+                            <ul>
+                                <li><a href="#">Monopod</a>
+                                </li>
+                                <li><a href="#">Mp3 Player</a>
+                                </li>
+                                <li><a href="#">Speakers</a>
+                                </li>
+                                <li><a href="#">Micro SD Cards</a>
+                                </li>
+                                <li><a href="#">Smart Watches</a>
+                                </li>
+                                <li><a href="#">Smart Wristbands</a>
+                                </li>
+                                <li><a href="#">Tv</a>
+                                </li>
+                                <li><a href="#">Projectors</a>
+                                </li>
+                                <li><a href="#">Gaming</a>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default">SHOP NOW</button>
+                        </div>
+
+
+                        <div class="electronics_middle float_left">
+                            <div id="electronics-carousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="images/electronics_slider.png" alt="#">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="images/electronics_slider.png" alt="#">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <a class="left slider-left-btn" href="#electronics-carousel" role="button" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                                <a class="right slider-right-btn" href="#electronics-carousel" role="button" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="carousel_title ec_car">
+                                <h4>BEST QUALITY FROM BEST SELLER 2015</h4>
+                            </div>
+                        </div>
+                        <div class="electronics_right float_left">
+                            <div class="product_top">
+                                <div class="single_left cc-h3 cc-h3-1">
+                                    <a href="#"><img src="images/camera.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">CANON CAMERA</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$800.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_right cc-h3 cc-h3-2">
+                                    <a href="#"><img src="images/mobile.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">NEXUS LATEST</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$1000.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_bottom">
+                                <div class="single_left cc-h3 cc-h3-3">
+                                    <a href="#"><img src="images/vacoum.png" alt="">
+                                    </a>
+                                    <div class="tagg new">
+                                        <span>new</span>
+                                    </div>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">VACCUM CLEANER</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$500.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_right cc-h3 cc-h3-4">
+                                    <a href="#"><img src="images/washing.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">WASHING MACHINE</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$2000.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ELECTRONICS-AREA END -->
+	
+    <!-- NEWSLETTER-AREA -->
+    <section class="newsletter_area section_padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div id="newsletter-bg">
+                        <div class="newsletter-overlay">
+                            <div class="subscribe-header">
+                                <h1>Newsletter subscribe</h1>
+								<div class="n_line"></div>
+                                <p>Subscribe to your mailing list to receive on new arrivals, special offers and other discount information.</p>
+                                <form class="form subscribe-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="f-name" class="sr-only">Newsletter</label>
+                                            <input type="text" class="form-control" id="f-name" placeholder="Enter your email address">
+                                            <div class="input_icon">
+                                                <img src="images/news.png" alt="#">
+                                            </div>
+                                            <div class="input-group-addon">
+                                                <button class="" type="submit">SUBMIT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- NEWSLETTER-AREA END -->
+	
+    <!--BAGS-SHOES-AREA -->
+    <section class="bags_shoes_area section_padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="bags_shoes">
+                        <div class="bags_shoes_sidebar float_left">
+                            <h3>BAGS & SHOES</h3>
+                            <ul>
+                                <li><a href="#">Women Sandles</a>
+                                </li>
+                                <li><a href="#">Woman Flat</a>
+                                </li>
+                                <li><a href="#">Men Sneakers</a>
+                                </li>
+                                <li><a href="#">Men Sandals</a>
+                                </li>
+                                <li><a href="#">Woman Crossbody Bags</a>
+                                </li>
+                                <li><a href="#">Men Bags</a>
+                                </li>
+                                <li><a href="#">Men Wallets</a>
+                                </li>
+                                <li><a href="#">Woman Backpacks</a>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default">SHOP NOW</button>
+                        </div>
+                        <div class="bags_shoes_middle float_left">
+                            <div id="bag-shoe-carousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="images/shoe_slider.png" alt="">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="images/shoe_slider.png" alt="">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <a class="left slider-left-btn" href="#bag-shoe-carousel" role="button" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                                <a class="right slider-right-btn" href="#bag-shoe-carousel" role="button" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="carousel_title bag_car">
+                                <h4>COLLECTION 2015 IN STORES AND ONLINE</h4>
+                            </div>
+                        </div>
+                        <div class="bag_shoes_right float_left">
+                            <div class="product_top">
+                                <div class="single_left cc-h3 cc-h3-1">
+                                    <a href="#"><img src="images/ladies_bag.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">HANDBAGS FOR WOMAN</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$200.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_right cc-h3 cc-h3-2">
+                                    <a href="#"><img src="images/man_shoe.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">TRENDY SHOES FOR MEN</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$300.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_bottom">
+                                <div class="single_left cc-h3 cc-h3-3">
+                                    <a href="#"><img src="images/ladies_shoe.png" alt="">
+                                    </a>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">SHOES FOR GIRLS</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$220.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_right cc-h3 cc-h3-4">
+                                    <a href="#"><img src="images/travel_bag.png" alt="">
+                                    </a>
+                                    <div class="tagg new">
+                                        <span>new</span>
+                                    </div>
+                                    <div class="product-wid-rating">
+                                        <h4><a href="single-product.html">TRAVEL BAGS</a>
+                                        </h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <div class="product-wid-price">
+                                            <ins>$280.00</ins>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--BAGS-SHOES-AREA END -->
+	
+    <!--PROMP-PRODUCT-AREA -->
+    <section class="promo_products section_padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="promo-headline">
+                        <h3>RECENT PRODUCTS</h3>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/recent_product1.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">LATEST SHIRTS FOR MEN</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$250.00</ins>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/recent_product2.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">TRENDY SHOES FOR MEN</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$220.00</ins>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/recent_product3.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">HANDBAG FOR WOMEN</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$120.00</ins>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="promo-headline">
+                        <h3>BEST SELLERS</h3>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/best_sell1.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">WATCHES COLLECTION</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$300.00</ins>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/best_sell2.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">GIRLS TOP FASHION</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$200.00</ins>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/best_sell3.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">FOOTWEAR FOR GIRLS</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$100.00</ins>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="promo-headline">
+                        <h3>POPULAR PRODUCTS</h3>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/popular_product1.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">MODERN TRAVEL BAG</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$300.00</ins>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/popular_product2.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">WATCHES FOR MEN</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$280.00</ins>
+                            </div>
+                        </div>
+                        <div class="single-wid-product">
+                            <a href="#"><img src="images/popular_product3.png" alt="" class="product-thumb">
+                            </a>
+                            <h2><a href="single-product.html">LAMP FOR LIVING ROOM</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="product-wid-price ex_mar">
+                                <ins>$150.00</ins>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PROMP-PRODUCT-AREA END -->
+	
+{% endblock %}
+

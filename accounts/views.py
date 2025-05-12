@@ -1,10 +1,10 @@
 
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib import messages
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, ProfileForm
 from django.shortcuts import redirect, render
 from django.utils.http import urlsafe_base64_decode
 from accounts.models import CustomUser
@@ -42,7 +42,7 @@ def verify_email(request, uidb64, token):
         messages.error(request, "The verification link is invalid or has expired.")
         return redirect("signup")
 
-def login(request):
+def user_login(request):
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
@@ -52,9 +52,26 @@ def login(request):
         elif not user.is_verified:
             messages.error(request, "Your email is not verified yet.")
         else:
-            login(request, user)
+            auth_login(request, user)
             messages.success(request, "You have successfully logged in.")
-            return redirect("profile")
-
+            return redirect ('profile')
     return render(request, "accounts/login.html")
+
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')  # reload page after save
+    else:
+        form = ProfileForm(instance=request.user)
+
+    return render(request, 'accounts/profile.html', {'form': form})
+
+@login_required
+def logout_view(request):
+    logout(request)
+    messages.success(request, "You have successfully logged out.")
+    return redirect("login")
 
