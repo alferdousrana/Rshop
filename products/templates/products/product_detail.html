@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ product.name }} | Product Details{% endblock %}
+
+{% block content %}
+
+<!-- PAGE-TITLE-AREA -->
+<section class="page-title-area">
+	<div class="page-title-overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="page-title">
+						<h3>{{ product.name }}</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- PAGE-TITLE-AREA:END -->
+
+<!-- BREADCRUMBS -->
+<div class="title-breadcrumb">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="bred-title">
+					<h3>Product details</h3>
+				</div>
+				<ol class="breadcrumb">
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li class="active">{{ product.name }}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- BREADCRUMBS:END -->
+
+<!-- PRODUCT-DETAILS -->
+<div class="single-product-area section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="product-img-detail">
+					{% if images %}
+					<img src="{{ images.0.image.url }}" alt="{{ product.name }}" class="img-fluid">
+					{% if images|length > 1 %}
+					<div class="mt-3 d-flex gap-2">
+						{% for img in images|slice:"1:" %}
+						<img src="{{ img.image.url }}" alt="{{ product.name }}" width="70">
+						{% endfor %}
+					</div>
+					{% endif %}
+					{% else %}
+					<p>No image available.</p>
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="single-product-content">
+					<h3>{{ product.name }}</h3>
+
+					<div class="product-review mb-2">
+						<ul class="list-inline">
+							{% for i in "12345" %}
+							<li class="list-inline-item">
+								<i
+									class="fa {% if forloop.counter <= avg_rating %}fa-star{% else %}fa-star-o{% endif %}"></i>
+							</li>
+							{% endfor %}
+							<li class="list-inline-item">{{ reviews.count }} Review(s)</li>
+							{% if is_new %}
+							<span class="badge badge-success">New</span>
+							{% endif %}
+						</ul>
+						<h4>Availability: <span>
+						{% if is_available %}
+						In Stock
+						{% else %}
+						Out of Stock
+						{% endif %}
+						</span></h4>
+						<div class="product-wid-price">
+							<ins>Tk {{ discounted_price }}</ins>
+							{% if product.discount_price %}
+							<del>Tk {{ product.price }}</del>
+							{% endif %}
+						</div>
+					</div>
+
+					<div>
+						<p>{{ product.description }}</p>
+					</div>
+
+					<div class="single-color">
+						<div class="product-color">
+							<h4>Color :</h4>
+							<ul class="list-inline">
+								{% for c in color %}
+								<li class="list-inline-item" title="{{ c.name }}">
+									<span
+										style="display:inline-block; width:24px; height:24px; border-radius:50%;"
+										aria-label="{{ c.name }}"></span>
+								</li>
+								{% endfor %}
+							</ul></div>
+
+						<div class="product-size mt-3">
+							<p>Size :</p>
+							<select name="size" class="form-select w-auto">
+								{% for s in sizes %}
+								<option>{{ s.name }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+					<div class="mt-3">
+						<label>Qty :</label>
+						<input type="number" step="1" min="1" value="1" class="form-control d-inline w-auto">
+						<button class="btn btn-primary ml-2"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+					</div>
+
+					<div class="mt-4">
+						<a href="#"><i class="fa fa-heart-o"></i></a>
+						<a href="#"><i class="fa fa-exchange"></i></a>
+						<a href="#"><i class="fa fa-envelope-o"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Product Tabs -->
+		<div class="product-tab product-tab-single mt-5">
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item active">
+					<a href="#description" class="nav-link active" data-toggle="tab">Product description</a>
+				</li>
+				<li class="nav-item">
+					<a href="#reviews" class="nav-link" data-toggle="tab">Reviews</a>
+				</li>
+			</ul>
+
+			<div class="tab-content pt-3">
+				<div class="tab-pane fade show active" id="description">
+					<p>{{ product.description|linebreaks }}</p>
+				</div>
+
+				<div class="tab-pane fade" id="reviews">
+					{% if reviews %}
+					{% for review in reviews %}
+					<div class="review mb-4">
+						<strong>{{ review.user_name }}</strong>
+						<span class="text-muted">on {{ review.created_at|date:"d M, Y" }}</span>
+						<div>
+							{% for i in "12345" %}
+							<i
+								class="fa {% if forloop.counter <= review.rating %}fa-star{% else %}fa-star-o{% endif %}"></i>
+							{% endfor %}
+						</div>
+						<p>{{ review.comment }}</p>
+					</div>
+					{% endfor %}
+					{% else %}
+					<p>No reviews yet.</p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

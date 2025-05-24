@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, SubCategory, Product, Review
+from datetime import timedelta
+from django.utils import timezone
+from django.db.models import Avg
 
 # Home View
 def home(request):
@@ -14,36 +17,56 @@ def home(request):
     
     return render(request, 'products/home.html', context)
 
-
-#Product List View
 def product_list(request):
-    products = Product.objects.filter(is_available=True)
+    selected_categories = request.GET.getlist('category')
     categories = Category.objects.all()
-    
+
+    if selected_categories:
+        products = Product.objects.filter(category__slug__in=selected_categories)
+    else:
+        products = Product.objects.all()
+
+    for product in products:
+        # Mark new
+        product.is_new = product.created_at >= timezone.now() - timedelta(days=7)
+
+        # Add average rating
+        reviews = product.reviews.all()
+        if reviews.exists():
+            avg = reviews.aggregate(Avg('rating'))['rating__avg']
+            product.avg_rating = round(avg or 0)
+        else:
+            product.avg_rating = 0
+
     context = {
         'products': products,
         'categories': categories,
-        
+        'selected_categories': selected_categories,
     }
     return render(request, 'products/product_list.html', context)
 
 
 # Product Detail View
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
+def product_detail(request, slug):
+    product = get_object_or_404(Product, slug=slug)
     images = product.images.all()
     sizes = product.sizes.all()
-    colors = product.colors.all()
-    reviews = product.reviews.filter(is_verified=True)
+    color = product.colors.all()
+    reviews = product.reviews.all()
+    discounted_price = product.get_discounted_price()
 
     context = {
         'product': product,
         'images': images,
         'sizes': sizes,
-        'colors': colors,
+        'color': color,
         'reviews': reviews,
+        'is_new': product.created_at >= timezone.now() - timedelta(days=7),
+        'avg_rating': round(reviews.aggregate(Avg('rating'))['rating__avg'] or 0),
+        'is_available': product.is_available,
+        'discounted_price': discounted_price,
     }
-    return render(request, 'products/single_product.html', context)
+    return render(request, 'products/product_detail.html', context)
 
 
 # Filter by Category

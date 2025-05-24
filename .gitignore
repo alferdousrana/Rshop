@@ -16,7 +16,6 @@ env/
 db.sqlite3
 
 # VS Code
-.vscode/
 
 # OS
 .DS_Store
@@ -25,3 +24,6 @@ Thumbs.db
 # Static and media
 /staticfiles/
 /media/
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
