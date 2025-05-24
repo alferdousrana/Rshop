@@ -93,34 +93,6 @@
                         <div class="search-area">
                             <form>
                                 <div class="control-group">
-                                    <ul class="categories-filter animate-dropdown">
-                                        <li class="dropdown">
-
-                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">All Categories <b
-                                                    class="caret"></b></a>
-
-                                            <ul class="dropdown-menu" role="menu">
-
-                                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                        href="#">Fashion</a>
-                                                </li>
-                                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                        href="#">Watches</a>
-                                                </li>
-                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">House
-                                                        Wares</a>
-                                                </li>
-                                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                        href="#">Desktop</a>
-                                                </li>
-                                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                        href="#">Smartphones</a>
-                                                </li>
-
-
-                                            </ul>
-                                        </li>
-                                    </ul>
                                     <input class="search-field" placeholder="Search here..." />
                                     <a class="search-button" href="#"></a>
                                 </div>
@@ -180,23 +152,9 @@
                             <ul id="navigation">
                                 <li class="active"><a href="{% url 'home' %}">Home </a>
                                 </li>
-                                <li><a href="#">Pages <i class="fa fa-caret-down"></i></a>
-                                    <ul class="drop_nav">
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="product-list.html">Product list</a></li>
-                                        <li><a href="profile.html">Profile</a></li>
-                                        <li><a href="search-result.html">Search result</a></li>
-                                        <li><a href="single-product.html">Single product</a></li>
-                                        <li><a href="wishlist.html">wishlist</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul>
+                                <li class="active"><a href="{% url 'product_list' %}">Shop </a>
                                 </li>
                                 <li><a href="about-us.html">About Us</a>
-                                </li>
-                                <li><a href="product-list.html">Men</a>
-                                </li>
-                                <li><a href="product-list.html">Women</a>
                                 </li>
                                 <li><a href="contact-us.html">Contact Us</a>
                                 </li>
@@ -215,11 +173,7 @@
                                     <div id='cssmenu'>
                                         <ul>
                                             <li class='has-sub'>
-                                                <a href='index.html'><span>Home</span></a>
-                                                <ul class="sub-nav">
-                                                    <li><a href="homepage_02.html"><span>Home version 2</span></a></li>
-                                                    <li><a href="homepage_03.html"><span>Home version 3</span></a></li>
-                                                </ul>
+                                                <a href="{% url 'home' %}"><span>Home</span></a>
                                             </li>
                                             <li class='has-sub'>
                                                 <a href='#'><span>Pages</span></a>
@@ -228,10 +182,6 @@
                                                     <li><a href="checkout.html">Checkout</a></li>
                                                     <li><a href="product-list.html">Product list</a></li>
                                                     <li><a href="profile.html">Profile</a></li>
-                                                    <li><a href="search-result.html">Search result</a></li>
-                                                    <li><a href="single-product.html">Single product</a></li>
-                                                    <li><a href="wishlist.html">wishlist</a></li>
-                                                    <li><a href="404.html">404</a></li>
                                                 </ul>
                                             </li>
                                             <li>
