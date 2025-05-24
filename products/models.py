@@ -38,6 +38,7 @@ class SubCategory(TimeStampedModel):
 
 class Product(TimeStampedModel):
     name = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     sub_category = models.ForeignKey(SubCategory, on_delete=models.SET_NULL, null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -48,6 +49,15 @@ class Product(TimeStampedModel):
     height = models.DecimalField(max_digits=6, decimal_places=2, help_text="Height in cm", blank=True, null=True)
     weight = models.DecimalField(max_digits=6, decimal_places=2, help_text="Weight in kg", blank=True, null=True)
 
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+        
+    def get_discounted_price(self):
+        return self.price - (self.price * self.discount / 100)
+    
     def __str__(self):
         return self.name
 
